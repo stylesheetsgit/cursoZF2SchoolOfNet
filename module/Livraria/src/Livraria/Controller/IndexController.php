@@ -9,6 +9,8 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+        $this->getServiceLocator()->get("Doctrine\ORM\Entity");
+        
         $view = array(
            
         );
