@@ -7,20 +7,20 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name='categoria')
- * @ORM\Entity\(repositoryClass='Livraria\Entity\CategoriaRepository')
+ * @ORM\Table(name="categoria")
+ * @ORM\Entity(repositoryClass="Livraria\Entity\CategoriaRepository")
  */
 class Categoria {
     /**
      * @ORM\id
-     * @OEM\Column(type='integer')
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue
      * @var int
      */
     protected $id;
     
     /**
-     * @ORM\Column(type='text')
+     * @ORM\Column(type="text")
      * @var string
      */
     protected $nome;

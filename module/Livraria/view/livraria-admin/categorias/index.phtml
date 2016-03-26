@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Categorias</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+            <?php foreach ($this->categorias as $categoria) : ?>
+            <tr>
+                <td><?php echo $categoria->getId(); ?></td>
+                <td><?php echo $categoria->getNome(); ?></td>
+                <td></td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php echo $this->paginationControl($this->categorias, 'Sliding', 'paginator'); ?>
+    </div>    
+</div>

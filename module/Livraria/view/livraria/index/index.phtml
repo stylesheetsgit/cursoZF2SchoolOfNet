@@ -2,7 +2,9 @@
     <div class="col-md-12">
         <h2>Categorias</h2>
         <ul>
-            
+            <?php foreach ($this->categorias as $categoria) : ?>
+            <li><?php echo $categoria->getNome(); ?></li>
+            <?php endforeach; ?>
         </ul>
     </div>    
 </div>

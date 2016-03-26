@@ -9,10 +9,13 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        $this->getServiceLocator()->get("Doctrine\\ORM\\EntityManager");
+        $entityManager = $this->getServiceLocator()->get("Doctrine\ORM\EntityManager");
+        $repository = $entityManager->getRepository('Livraria\Entity\Categoria');
+        
+        $Categorias = $repository->findAll();
         
         $view = array(
-           
+           'categorias' => $Categorias
         );
         
         return new ViewModel($view);
