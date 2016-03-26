@@ -18,7 +18,17 @@ return array(
             'livraria-admin' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/admin/[:controller[/:action][/page/:page]]',
+                    'route' => '/admin/[:controller[/:action]/page/[:page]]',
+                    'defaults' => array(
+                        'action' => 'index',
+                        'page' => 1
+                    ),
+                ),
+            ),
+            'livraria-admin1' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/admin/[:controller[/:action]]',
                     'defaults' => array(
                         'action' => 'index',
                         'page' => 1

@@ -31,7 +31,7 @@ class CategoriasController extends AbstractActionController {
                 
         $paginator = new Paginator(new ArrayAdapter($categorias));
         $paginator->setCurrentPageNumber($page);
-        $paginator->setDefaultItemCountPerPage(1);
+        $paginator->setDefaultItemCountPerPage(10);
         
         $view = array(
             'categorias' => $paginator,

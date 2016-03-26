@@ -12,10 +12,10 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Categoria {
     /**
-     * @ORM\id
+     * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue
-     * @var int
+     * @var integer
      */
     protected $id;
     
