@@ -1,17 +1,41 @@
 <div class="row">
     <div class="col-md-12">
         <h2>Categorias</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 text-right">
+        <a href="<?php echo $this->url('livraria-admin', array(
+            'controller' => 'categorias',
+            'action' => 'new'
+        )); ?>" class="btn btn-success">Nova Categoria</a>
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
         <table class="table table-striped">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Ações</th>
+                <th class="col-md-2">Ações</th>
             </tr>
             <?php foreach ($this->categorias as $categoria) : ?>
             <tr>
                 <td><?php echo $categoria->getId(); ?></td>
                 <td><?php echo $categoria->getNome(); ?></td>
-                <td></td>
+                <td>
+                    <a href="<?php echo $this->url('livraria-admin-interna', array(
+                        'controller' => 'categorias',
+                        'action' => 'edit',
+                        'id' => $categoria->getId()
+                    )); ?>">Editar</a>
+                    <a href="<?php echo $this->url('livraria-admin-interna', array(
+                        'controller' => 'categorias',
+                        'action' => 'delete',
+                        'id' => $categoria->getId()
+                    )); ?>">Excluir</a>
+                </td>
             </tr>
             <?php endforeach; ?>
         </table>

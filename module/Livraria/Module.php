@@ -7,6 +7,8 @@ use Zend\Mvc\MvcEvent;
 
 use Livraria\Model\CategoriaTable;
 
+use Livraria\Service\Categoria as CategoriaService;
+
 class Module
 {
     public function onBootstrap(MvcEvent $e)
@@ -41,8 +43,11 @@ class Module
                     $categoriaTable = new CategoriaTable($adapter);
                     $categoriaService = new Model\CategoriaService($categoriaTable);
                     return $categoriaService;
-                }                       
-            )    
+                },
+                'Livraria\Service\Categoria' => function($service) {
+                    return new CategoriaService($service->get('Doctrine\ORM\EntityManager'));
+                }       
+            ),    
         );
     }
 }

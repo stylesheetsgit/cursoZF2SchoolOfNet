@@ -25,6 +25,10 @@ class Categoria {
      */
     protected $nome;
     
+    public function __construct($options = null) {
+        Configurator::configure($this, $options);
+    }
+
     public function getId() {
         return $this->id;
     }
